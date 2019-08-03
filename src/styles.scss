@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'custom-theme.scss';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+button:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+button {
+  border: none !important;
+  outline: none !important;
+}
+
+button.mat-button .mat-icon,
+a.mat-button .mat-icon,
+a.mat-raised-button .mat-icon,
+a.mat-flat-button .mat-icon,
+a.mat-stroked-button .mat-icon {
+  vertical-align: top;
+  font-size: 1.25em;
+}
