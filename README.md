@@ -1,4 +1,4 @@
-# Vuttr UI
+# Vuttr front
 
 ### Clonando o repositório
 
