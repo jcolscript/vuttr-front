@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ToolsService } from 'src/app/services/tools.service';
 import { ToolsModel } from 'src/app/models/tool/tool';
+import { MatDialog } from '@angular/material';
+import { ErrorComponent } from 'src/app/components/dialog/error/error.component';
 
 @Component({
   selector: 'app-main',
@@ -12,7 +14,8 @@ export class MainComponent implements OnInit {
   public load = false;
 
   constructor(
-    public toolsService: ToolsService
+    public toolsService: ToolsService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -24,6 +27,11 @@ export class MainComponent implements OnInit {
     },
     (error) => {
       console.log('erro');
+      this.dialog.open(ErrorComponent, {
+        width: '400px',
+        height: '332px',
+        data: {msg: ''}
+      });
     });
 
     this.toolsService.tools$.subscribe((tools) => {

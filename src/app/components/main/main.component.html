@@ -1,6 +1,7 @@
 <div class="spinner-border" role="status" *ngIf="!load">
   <span class="sr-only">Loading...</span>
 </div>
+
 <ng-container *ngIf="load">
   <div class="row">
     <div class="col-12">
@@ -31,5 +32,8 @@
     </div>
   </div>
 
-  <app-tool></app-tool>
+  <ng-container *ngFor="let tool of tools">
+      <app-tool [tool]="tool"></app-tool>
+  </ng-container>
+
 </ng-container>

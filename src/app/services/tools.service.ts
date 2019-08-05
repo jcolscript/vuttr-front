@@ -24,7 +24,9 @@ export class ToolsService {
   }
 
   loadTools(tools: ToolsModel[]) {
-    this.toolsSource$.next(tools);
+    if (!this.toolsSource$.getValue()) {
+      this.toolsSource$.next(tools);
+    }
   }
 
 }
