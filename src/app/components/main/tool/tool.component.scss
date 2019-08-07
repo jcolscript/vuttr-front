@@ -1,5 +1,37 @@
 .tool-card {
     border-radius: 5px;
     border: 1px solid #EBEAED;
-    box-shadow: 0px 10px 10px rgba($color: #000000, $alpha: 0.07)
+    box-shadow: 0px 10px 10px rgba($color: #000000, $alpha: 0.07);
+
+    .mat-card-title {
+        font-weight: 600;
+    }
+
+    .mat-card-content {
+        margin: 0px 0px 16px 16px;
+    }
+
+    .mat-card-content > p{
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    .mat-card-content>span {
+      padding: 5px 13px;
+      background-color: #E1E7FD;
+      color: #365DF0;
+      border-radius: 23px;
+      font-weight: 600;
+      margin-right: 5px;
+    }
+
+    .mat-chip, .mat-chip:active, .mat-chip:hover, .mat-chip:focus  {
+        background-color: #E1E7FD;
+        color: #365DF0;
+    }
+
+    .mat-standard-chip, .mat-standard-chip:active, .mat-standard-chip:hover, .mat-standard-chip:focus  {
+        background-color: #E1E7FD;
+        color: #365DF0;
+    }
 }
