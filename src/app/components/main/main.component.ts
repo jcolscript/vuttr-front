@@ -26,11 +26,11 @@ export class MainComponent implements OnInit {
       }
     },
     (error) => {
-      console.log('erro');
+      console.log(error);
       this.dialog.open(ErrorComponent, {
         width: '400px',
         height: '332px',
-        data: {msg: ''}
+        data: { msg: 'Ops... Isso não costuma acontecer. Tente um novo acesso mais tarde' }
       });
     });
 

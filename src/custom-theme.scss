@@ -17,16 +17,16 @@ $general-typography: mat-typography-config(
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 // $crd-app-primary: mat-palette($mat-blue-grey, 800, 600, 900);
-$crd-app-primary: mat-palette($mat-blue-grey, 800, 600, 900);
-$crd-app-accent:  mat-palette($mat-light-green, A400, A200, A700);
+$vtr-app-primary: mat-palette($mat-blue, A700, A400, A200);
+$vtr-app-accent:  mat-palette($mat-light-green, A400, A200, A700);
 
 // The warn palette is optional (defaults to red).
-$crd-app-warn:    mat-palette($mat-red);
+$vtr-app-warn:    mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$crd-app-theme: mat-light-theme($crd-app-primary, $crd-app-accent, $crd-app-warn);
+$vtr-app-theme: mat-light-theme($vtr-app-primary, $vtr-app-accent, $vtr-app-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($crd-app-theme);
+@include angular-material-theme($vtr-app-theme);
