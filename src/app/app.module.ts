@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material.module';
 
@@ -9,16 +10,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { ToolComponent } from './components/main/tool/tool.component';
+import { ErrorComponent } from './components/dialog/error/error.component';
+import { AddToolComponent } from './components/dialog/add-tool/add-tool.component';
 
 import { ToolsService } from './services/tools.service';
-import { ErrorComponent } from './components/dialog/error/error.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     ToolComponent,
-    ErrorComponent
+    ErrorComponent,
+    AddToolComponent
   ],
   imports: [
     BrowserModule,
@@ -26,10 +30,12 @@ import { ErrorComponent } from './components/dialog/error/error.component';
     MaterialModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    FormsModule
   ],
   entryComponents: [
-    ErrorComponent
+    ErrorComponent,
+    AddToolComponent
   ],
   providers: [ToolsService],
   bootstrap: [AppComponent]

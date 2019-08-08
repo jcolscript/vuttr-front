@@ -3,6 +3,7 @@ import { ToolsService } from 'src/app/services/tools.service';
 import { ToolsModel } from 'src/app/models/tool/tool';
 import { MatDialog } from '@angular/material';
 import { ErrorComponent } from 'src/app/components/dialog/error/error.component';
+import { AddToolComponent } from '../dialog/add-tool/add-tool.component';
 
 @Component({
   selector: 'app-main',
@@ -12,6 +13,7 @@ import { ErrorComponent } from 'src/app/components/dialog/error/error.component'
 export class MainComponent implements OnInit {
   public tools;
   public load = false;
+  public search;
 
   constructor(
     public toolsService: ToolsService,
@@ -40,7 +42,30 @@ export class MainComponent implements OnInit {
         console.log(this.tools);
       }
     });
+  }
 
+  findTool() {
+    this.toolsService.findName(this.search);
+  }
+
+  deleteItem(item: number) {
+    if (typeof item === 'number') {
+      this.toolsService.deleteTool(item).subscribe( (res) => {
+        const index = this.tools.findIndex(tool => tool.id === item);
+        this.tools.splice(index, 1);
+        this.toolsService.loadTools(this.tools);
+        console.log(res);
+      },
+      (error) => {
+        console.log(error);
+      });
+    }
+  }
+
+  addToolModal() {
+    this.dialog.open(AddToolComponent, {
+      width: '570px',
+    });
   }
 
 }

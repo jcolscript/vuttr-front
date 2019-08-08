@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>
+  <mat-icon class="align-sef-center">add</mat-icon> Add new tool
+</h1>
+<div mat-dialog-content>
+  <div class="d-flex flex-column mb-4">
+      <label for="name">Tool Name</label>
+      <input class="d-flex justify-content-star field" type="text" name="name" id="name">
+  </div>
+  <div class="d-flex flex-column mb-4">
+      <label for="link">Tool Link</label>
+      <input class="d-flex justify-content-star field" type="text" name="link" id="link">
+  </div>
+  <div class="d-flex flex-column mb-4">
+      <label for="description">Tool Description</label>
+      <textarea class="d-flex justify-content-star" rows="3" name="description" id="description"></textarea>
+  </div>
+  <div class="d-flex flex-column mb-4">
+      <label for="name">Tags</label>
+      <input class="d-flex justify-content-star field" type="text" name="name" id="name">
+  </div>
+  <div class="d-flex flex-column">
+      <button mat-button class="primary-btn d-flex align-self-end" (click)="addTool()"> ADD TOOL </button>
+  </div>
+</div>

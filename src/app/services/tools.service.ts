@@ -18,6 +18,28 @@ export class ToolsService {
     public http: HttpClient
   ) { }
 
+  setTool(tool: ToolsModel) {
+    const endpoint = 'tools';
+    return this.http.post(`${env.API_URL}${endpoint}`, tool);
+  }
+
+  deleteTool(id: number) {
+    const endpoint = 'tools';
+    return this.http.delete(`${env.API_URL}${endpoint}/${id}`);
+  }
+
+  findName(name: string) {
+    const endpoint = 'tools';
+    this.http.get(`${env.API_URL}${endpoint}/?q=${name}`).subscribe( (res: any) => {
+      this.loadTools(res);
+      this.toolsSource$.next(res);
+      console.log(res);
+    },
+    (error) => {
+      console.log(error);
+    });
+  }
+
   get Tools(): any {
     const endpoint = 'tools';
     return this.http.get(`${env.API_URL}${endpoint}`);
