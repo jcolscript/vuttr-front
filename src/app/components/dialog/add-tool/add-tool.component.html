@@ -16,7 +16,19 @@
   </div>
   <div class="d-flex flex-column mb-4">
       <label for="name">Tags</label>
-      <input class="d-flex justify-content-star field" type="text" name="name" id="name">
+      <mat-chip-list #tagsList aria-label="Fruit selection">
+        <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
+                 [removable]="removable" (removed)="remove(tag)">
+          {{tag}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input [matChipInputFor]="tagsList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="add($event)"
+               class="d-flex justify-content-star field"
+               name="tags" id="tags">
+      </mat-chip-list>
   </div>
   <div class="d-flex flex-column">
       <button mat-button class="primary-btn d-flex align-self-end" (click)="addTool()"> ADD TOOL </button>
