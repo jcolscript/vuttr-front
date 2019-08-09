@@ -18,9 +18,19 @@ export class ToolsService {
     public http: HttpClient
   ) { }
 
-  setTool(tool: ToolsModel) {
+  sendTool(tool: ToolsModel) {
     const endpoint = 'tools';
     return this.http.post(`${env.API_URL}${endpoint}`, tool);
+  }
+
+  setTool(tool: ToolsModel) {
+    this.sendTool(tool).subscribe((res) => {
+      this.toolsSource$.next([...this.toolsSource$.getValue(), tool]);
+      console.log(res);
+    },
+    (error) => {
+      console.log(error);
+    });
   }
 
   deleteTool(id: number) {

@@ -50,7 +50,12 @@ textarea {
 }
 
 .primary-btn:active {
-  background-color: #244AA8 !important;
+  background-color: #244AA8;
+}
+
+.primary-btn:disabled {
+  background-color: #B9C6FA !important;
+  color: #E1E7FD;
 }
 
 .mat-chip.mat-standard-chip {
