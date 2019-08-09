@@ -14,6 +14,7 @@ export class MainComponent implements OnInit {
   public tools;
   public load = false;
   public search;
+  public isTags;
 
   constructor(
     public toolsService: ToolsService,
@@ -45,7 +46,12 @@ export class MainComponent implements OnInit {
   }
 
   findTool() {
-    this.toolsService.findName(this.search);
+    if (!this.isTags) {
+      this.toolsService.findName(this.search);
+    } else {
+      this.toolsService.findTags(this.search);
+    }
+
   }
 
   deleteItem(item: number) {

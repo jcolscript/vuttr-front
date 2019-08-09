@@ -40,6 +40,18 @@ export class ToolsService {
     });
   }
 
+  findTags(tag: string) {
+    const endpoint = 'tools';
+    this.http.get(`${env.API_URL}${endpoint}/?tags_like=${tag}`).subscribe( (res: any) => {
+      this.loadTools(res);
+      this.toolsSource$.next(res);
+      console.log(res);
+    },
+    (error) => {
+      console.log(error);
+    });
+  }
+
   get Tools(): any {
     const endpoint = 'tools';
     return this.http.get(`${env.API_URL}${endpoint}`);
