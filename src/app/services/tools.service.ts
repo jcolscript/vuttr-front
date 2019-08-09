@@ -33,7 +33,6 @@ export class ToolsService {
     this.http.get(`${env.API_URL}${endpoint}/?q=${name}`).subscribe( (res: any) => {
       this.loadTools(res);
       this.toolsSource$.next(res);
-      console.log(res);
     },
     (error) => {
       console.log(error);
@@ -45,7 +44,6 @@ export class ToolsService {
     this.http.get(`${env.API_URL}${endpoint}/?tags_like=${tag}`).subscribe( (res: any) => {
       this.loadTools(res);
       this.toolsSource$.next(res);
-      console.log(res);
     },
     (error) => {
       console.log(error);
