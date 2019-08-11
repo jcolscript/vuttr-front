@@ -5,15 +5,27 @@
   <form name="newTool" [formGroup]="formNewTool">
       <div class="d-flex flex-column mb-4">
           <label for="name">Tool Name</label>
-          <input class="d-flex justify-content-star field" type="text" name="name" required formControlName="name" id="name">
+          <input class="d-flex justify-content-star field" [class.cross-validation-error] = "name.errors?.required && (name.touched || name.dirty)" type="text" name="name" required formControlName="name" id="name">
+          <div [hidden]="!(name.errors?.required && (name.touched || name.dirty))"
+               class="error-label">
+            Tool name is required
+          </div>
       </div>
       <div class="d-flex flex-column mb-4">
           <label for="link">Tool Link</label>
-          <input class="d-flex justify-content-star field" type="text" name="link" required formControlName="link" id="link">
+          <input class="d-flex justify-content-star field" [class.cross-validation-error] = "link.errors?.required && (link.touched || link.dirty)" type="text" name="link" required formControlName="link" id="link">
+          <div [hidden]="!(link.errors?.required && (link.touched || link.dirty))"
+               class="error-label">
+            Tool link is required
+          </div>
       </div>
       <div class="d-flex flex-column mb-4">
           <label for="description">Tool Description</label>
-          <textarea class="d-flex justify-content-star" rows="3" name="description" required formControlName="description" id="description"></textarea>
+          <textarea class="d-flex justify-content-star" [class.cross-validation-error] = "description.errors?.required && (description.touched || description.dirty)" rows="3" name="description" required formControlName="description" id="description"></textarea>
+          <div [hidden]="!(description.errors?.required && (description.touched || description.dirty))"
+               class="error-label">
+            Tool description is required
+          </div>
       </div>
   </form>
   <div class="d-flex flex-column mb-4">

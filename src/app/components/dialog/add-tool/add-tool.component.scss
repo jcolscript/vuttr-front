@@ -17,6 +17,28 @@ label {
   font-size: 1rem;
 }
 
+.field:focus {
+  background-color: #EBEAED;
+}
+
+.error-label {
+  align-self: end;
+  color: #F95E5A;
+  margin-bottom: -24px;
+}
+
+.cross-validation-error {
+  color: #F95E5A;
+  border: 1px solid #F95E5A;
+  background-color: #FEEFEE;
+}
+
+.cross-validation-error:focus {
+  color: #F95E5A;
+  border: 1px solid #F95E5A;
+  background-color: #FEEFEE;
+}
+
 textarea {
   border-radius: 5px;
   border: 1px solid #EBEAED;
@@ -24,10 +46,6 @@ textarea {
   width: 100%;
   padding: .375rem .75rem;
   font-size: 1rem;
-}
-
-.field:focus {
-  background-color: #EBEAED;
 }
 
 .add-icon .icon-search {
