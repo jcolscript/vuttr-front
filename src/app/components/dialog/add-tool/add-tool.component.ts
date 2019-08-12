@@ -52,7 +52,7 @@ export class AddToolComponent implements OnInit {
     const input = event.input;
     const value = event.value;
 
-    // Add our fruit
+    // Add our tags
     if ((value || '').trim()) {
       this.tags.push(value.trim());
     }
