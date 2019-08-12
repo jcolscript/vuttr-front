@@ -38,6 +38,21 @@ export class ToolsService {
     return this.http.delete(`${env.API_URL}${endpoint}/${id}`);
   }
 
+  deleteItem(item: number) {
+    if (typeof item === 'number') {
+      this.deleteTool(item).subscribe( (res) => {
+        const tools = this.toolsSource$.getValue();
+        const index = tools.findIndex(tool => tool.id === item);
+        tools.splice(index, 1);
+        this.loadTools(tools);
+        console.log(res);
+      },
+      (error) => {
+        console.log(error);
+      });
+    }
+  }
+
   findName(name: string) {
     const endpoint = 'tools';
     this.http.get(`${env.API_URL}${endpoint}/?q=${name}`).subscribe( (res: any) => {

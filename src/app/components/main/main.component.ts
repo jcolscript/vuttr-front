@@ -54,20 +54,6 @@ export class MainComponent implements OnInit {
 
   }
 
-  deleteItem(item: number) {
-    if (typeof item === 'number') {
-      this.toolsService.deleteTool(item).subscribe( (res) => {
-        const index = this.tools.findIndex(tool => tool.id === item);
-        this.tools.splice(index, 1);
-        this.toolsService.loadTools(this.tools);
-        console.log(res);
-      },
-      (error) => {
-        console.log(error);
-      });
-    }
-  }
-
   addToolModal() {
     this.dialog.open(AddToolComponent, {
       width: '570px',

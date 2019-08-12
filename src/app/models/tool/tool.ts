@@ -1,6 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
-
-import { ToolsService } from 'src/app/services/tools.service';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'

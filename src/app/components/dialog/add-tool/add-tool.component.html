@@ -1,6 +1,9 @@
-<h1 mat-dialog-title>
-  <mat-icon class="align-sef-center">add</mat-icon> Add new tool
-</h1>
+<div class="d-flex justify-content-between">
+  <h1 mat-dialog-title>
+    Add new tool
+  </h1>
+  <mat-icon (click)="closeModal()" style="cursor: pointer">close</mat-icon>
+</div>
 <div mat-dialog-content>
   <form name="newTool" [formGroup]="formNewTool">
       <div class="d-flex flex-column mb-4">

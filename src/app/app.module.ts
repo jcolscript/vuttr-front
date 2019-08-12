@@ -14,6 +14,7 @@ import { ErrorComponent } from './components/dialog/error/error.component';
 import { AddToolComponent } from './components/dialog/add-tool/add-tool.component';
 
 import { ToolsService } from './services/tools.service';
+import { RemoveToolComponent } from './components/dialog/remove-tool/remove-tool.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ToolsService } from './services/tools.service';
     MainComponent,
     ToolComponent,
     ErrorComponent,
-    AddToolComponent
+    AddToolComponent,
+    RemoveToolComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { ToolsService } from './services/tools.service';
   ],
   entryComponents: [
     ErrorComponent,
-    AddToolComponent
+    AddToolComponent,
+    RemoveToolComponent
   ],
   providers: [ToolsService],
   bootstrap: [AppComponent]

@@ -19,6 +19,7 @@ export class AddToolComponent implements OnInit {
   public addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA, SPACE];
   public tags: string[] = [];
+  public tool = new ToolsModel();
 
   constructor(
     public dialogRef: MatDialogRef<AddToolComponent>,
@@ -72,14 +73,17 @@ export class AddToolComponent implements OnInit {
   }
 
   addTool() {
-    const tool = new ToolsModel();
-    tool.id = Math.floor(Math.random() * 100);
-    tool.link = this.link.value;
-    tool.title = this.name.value;
-    tool.description = this.description.value;
-    tool.tags = this.tags;
+    this.tool.id = Math.floor(Math.random() * 100);
+    this.tool.link = this.link.value;
+    this.tool.title = this.name.value;
+    this.tool.description = this.description.value;
+    this.tool.tags = this.tags;
 
-    this.toolsService.setTool(tool);
+    this.toolsService.setTool(this.tool);
+    this.closeModal();
+  }
+
+  closeModal() {
     this.dialogRef.close();
   }
 

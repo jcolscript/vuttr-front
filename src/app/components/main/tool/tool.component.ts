@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ToolsModel } from 'src/app/models/tool/tool';
+import { MatDialog } from '@angular/material';
+import { RemoveToolComponent } from '../../dialog/remove-tool/remove-tool.component';
 
 @Component({
   selector: 'app-tool',
@@ -11,13 +13,19 @@ export class ToolComponent implements OnInit {
   @Input() public tool: ToolsModel;
   @Output() itemDeleted = new EventEmitter();
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit() {
   }
 
-  deleteItem(item: number) {
-    this.itemDeleted.emit(item);
+  deleteItemModal(item: number) {
+    this.dialog.open(RemoveToolComponent, {
+      width: '500px',
+      height: '230px',
+      data: item
+    });
   }
 
 }
