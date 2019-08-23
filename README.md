@@ -15,3 +15,10 @@ A aplicação é um simples repositório para gerenciar ferramentas com seus res
 
 `ng serve` ou `npm start`
 
+### Arquitetura ###
+
+* `TypeScript`
+* `Angular Material`
+* `Bootstrap`
+* `RXJS`
+* `...`
