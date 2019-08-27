@@ -4,10 +4,10 @@
   </h1>
   <mat-icon (click)="closeModal()" style="cursor: pointer">close</mat-icon>
 </div>
-<div mat-dialog-content style="height: 100%">
+<div mat-dialog-content>
   <p>Are you sure want remove?</p>
-  <div class="d-flex justify-content-end align-items-end">
-    <button mat-button class="primary-btn d-flex align-self-end" (click)="addTool()"> ADD TOOL </button>
-    <button mat-button class="primary-btn d-flex align-self-end" (click)="addTool()"> ADD TOOL </button>
+  <div class="d-flex justify-content-end">
+    <button mat-flat-button [disableRipple]=true class="secondary-btn" (click)="closeModal()"> Cancel </button>
+    <button mat-flat-button [disableRipple]=true class="primary-btn" (click)="confirmDelete()"> Yes, remove </button>
   </div>
 </div>

@@ -23,7 +23,6 @@ export class ToolComponent implements OnInit {
   deleteItemModal(item: number) {
     this.dialog.open(RemoveToolComponent, {
       width: '500px',
-      height: '230px',
       data: item
     });
   }

@@ -3,8 +3,13 @@ h1 {
   font-size: 24px;
 }
 
+button {
+  margin-left: 23px;
+}
+
 .primary-btn {
   background-color: #365DF0;
+  font-weight: 600;
   color: #FFFFFF;
   border-radius: 5px;
 }
@@ -15,4 +20,19 @@ h1 {
 
 .primary-btn:active {
   background-color: #244AA8;
+}
+
+.secondary-btn {
+  background-color: #E1E7FD;
+  font-weight: 600;
+  color: #365DF0;
+  border-radius: 5px;
+}
+
+.secondary-btn:hover {
+  background-color: #CAD6FC;
+}
+
+.secondary-btn:active {
+  background-color: #B9C6FA;
 }

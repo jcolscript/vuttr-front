@@ -19,3 +19,11 @@ a.mat-stroked-button .mat-icon {
   vertical-align: top;
   font-size: 1.25em;
 }
+
+.mat-button, .mat-flat-button, .mat-stroked-button, .mat-icon-button
+{
+    &.cdk-program-focused .mat-button-focus-overlay
+    {
+        opacity: 0 !important;
+    }
+}
