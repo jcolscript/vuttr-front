@@ -40,7 +40,6 @@ export class MainComponent implements OnInit {
     this.toolsService.tools$.subscribe((tools) => {
       if (tools != null) {
         this.tools = tools;
-        console.log(this.tools);
       }
     });
   }

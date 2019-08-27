@@ -26,7 +26,6 @@ export class ToolsService {
   setTool(tool: ToolsModel) {
     this.sendTool(tool).subscribe((res) => {
       this.toolsSource$.next([...this.toolsSource$.getValue(), tool]);
-      console.log(res);
     },
     (error) => {
       console.log(error);
@@ -45,7 +44,6 @@ export class ToolsService {
         const index = tools.findIndex(tool => tool.id === item);
         tools.splice(index, 1);
         this.loadTools(tools);
-        console.log(res);
       },
       (error) => {
         console.log(error);
